@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 import { ProductsUI } from './ProductsUI';
 import Categories from './Categories';
@@ -39,34 +39,11 @@ const Main = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  // useEffect(() => {
-  //   setProducts(data);
-  //   setCategories(
-  //     data.reduce(
-  //       (acc, item) =>
-  //         !acc.includes(item.category) ? [...acc, item.category] : acc,
-  //       ['all']
-  //     )
-  //   );
-  // }, [data]);
-
   const handleFilter = (selected) => {
-    console.log(selected, data);
     setFilter({ ...filter, category: selected });
-    // setPrice({ min: '', max: '' });
-    // if (selected === 'all') {
-    //   setProducts(data);
-    // } else {
-    //   setProducts(
-    //     data.filter(
-    //       (item) => item.category.toLowerCase() === selected.toLowerCase()
-    //     )
-    //   );
-    // }
   };
 
   useEffect(() => {
-    console.log(filter);
     let filtered = [];
     if (filter.category === 'all') {
       filtered = data;
@@ -87,7 +64,7 @@ const Main = () => {
     );
     console.log(filtered);
     setProducts(filtered);
-  }, [filter]);
+  }, [filter, data]);
 
   return (
     <div className="grid grid-cols-8 gap-4">

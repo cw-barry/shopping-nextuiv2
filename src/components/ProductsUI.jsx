@@ -1,18 +1,7 @@
-import React, { useState } from 'react';
-
+/* eslint-disable react/prop-types */
 import { Card, CardBody, CardFooter, Image } from '@nextui-org/react';
 
 export const ProductsUI = ({ products }) => {
-  const [selecteds, setSelecteds] = useState([]);
-
-  const handleClick = (id) => {
-    if (!selecteds.includes(id)) {
-      setSelecteds([...selecteds, id]);
-    } else {
-      setSelecteds(selecteds.filter((i) => i !== id));
-    }
-  };
-
   return (
     <div className="gap-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
       {products.map((item, index) => (

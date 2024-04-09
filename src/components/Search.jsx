@@ -1,14 +1,7 @@
+/* eslint-disable react/prop-types */
 import { Input } from '@nextui-org/react';
-import { useEffect } from 'react';
-import { useState } from 'react';
-export default function Search({
-  data,
-  setProducts,
-  price,
-  setPrice,
-  filter,
-  setFilter,
-}) {
+
+export default function Search({ filter, setFilter }) {
   const handleChange = (key, value) => {
     console.log(key, value);
     setFilter({ ...filter, [key]: value });

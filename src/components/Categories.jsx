@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Button, ButtonGroup } from '@nextui-org/react';
 
 const Categories = ({ categories, handleFilter }) => {
