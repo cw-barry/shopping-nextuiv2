@@ -92,7 +92,9 @@ const Main = () => {
   return (
     <div className="grid grid-cols-8 gap-4">
       <div className="col-span-8 text-center ">
-        <h1 style={{ fontSize: '2rem' }}>Clarusway Shopping</h1>
+        <h1 style={{ fontSize: '2rem', fontWeight: 'bold' }} className="my-5">
+          Clarusway Shopping
+        </h1>
         <Categories {...{ categories, handleFilter }} />
       </div>
 
@@ -101,7 +103,7 @@ const Main = () => {
           {...{ data, setProducts, price, setPrice, setFilter, filter }}
         />
       </div>
-      <div className="col-span-6 lg:col-span-7">
+      <div className="col-span-6 lg:col-span-7 mr-2">
         <ProductsUI {...{ products }} />
       </div>
     </div>

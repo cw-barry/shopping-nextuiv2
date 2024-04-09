@@ -21,6 +21,7 @@ export const ProductsUI = ({ products }) => {
           key={index}
           isPressable
           onPress={() => console.log('item pressed')}
+          //   className="drop-shadow-[0_12px_24px_rgb(104,112,118,0.15), 0_12px_14px_rgb(104,112,118,0.1)]"
         >
           <CardBody className="overflow-visible p-0">
             <Image
