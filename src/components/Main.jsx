@@ -43,6 +43,14 @@ const Main = () => {
     setFilter({ ...filter, category: selected });
   };
 
+  const handleSelected = (id) => {
+    const temp = [...products];
+    const index = temp.findIndex((item) => item.id === id);
+    temp[index].selected = !temp[index].selected;
+    console.log(temp);
+    setProducts(temp);
+  };
+
   useEffect(() => {
     let filtered = [];
     if (filter.category === 'all') {
@@ -81,7 +89,7 @@ const Main = () => {
         />
       </div>
       <div className="col-span-6 lg:col-span-7 mr-2">
-        <ProductsUI {...{ products }} />
+        <ProductsUI products={products} handleSelected={handleSelected} />
       </div>
     </div>
   );
